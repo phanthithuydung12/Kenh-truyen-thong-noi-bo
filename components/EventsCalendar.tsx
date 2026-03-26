@@ -19,7 +19,7 @@ const events: Event[] = [
   {
     day: "25",
     month: "Th10",
-    title: "Họp giao ban tháng",
+    title: "Họp giao ban tháng 10",
     location: "Trực tuyến",
     isActive: false,
   },
