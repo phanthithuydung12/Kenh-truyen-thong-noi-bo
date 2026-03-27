@@ -2,22 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SearchInput } from "./SearchInput";
 
 interface NavLink {
   label: string;
   href: string;
-  active?: boolean;
+}
+
+interface HeaderProps {
+  onNotificationClick?: () => void;
 }
 
 const navLinks: NavLink[] = [
-  { label: "Truyền thông Vietbank", href: "/", active: true },
+  { label: "Truyền thông Vietbank", href: "/truyen-thong-Vietbank" },
   { label: "Người Vietbank", href: "/nguoi-vietbank" },
-  { label: "Hoạt động cộng đồng", href: "#" },
-  { label: "Thi đua nội bộ", href: "#" },
+  { label: "Hoạt động cộng đồng", href: "/community" },
+  { label: "Thi đua nội bộ", href: "/competition" },
 ];
 
-export function Header() {
+export function Header({ onNotificationClick }: HeaderProps) {
+  const pathname = usePathname();
+
   return (
     <header className="sticky top-0 z-50 bg-background-light dark:bg-background-dark border-b border-primary/10 shadow-sm">
       <div className="max-w-[1200px] mx-auto px-4">
@@ -27,7 +33,7 @@ export function Header() {
             <div className="text-primary flex size-10 items-center justify-center rounded-lg bg-primary/10 lg:hidden">
               <span className="material-symbols-outlined">menu</span>
             </div>
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center transition-opacity hover:opacity-80">
               <Image 
                 src="/logo.svg" 
                 alt="Vietbank Logo" 
@@ -45,7 +51,10 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-4 shrink-0">
-            <button className="relative flex size-10 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+            <button 
+              onClick={onNotificationClick}
+              className="relative flex size-10 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all active:scale-90 hover:bg-slate-300 dark:hover:bg-slate-700"
+            >
               <span className="material-symbols-outlined">notifications</span>
               <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">
                 3
@@ -63,21 +72,24 @@ export function Header() {
         {/* Navigation Bar - Desktop Full */}
         <div className="flex items-center justify-between">
           <div className="flex overflow-x-auto hide-scrollbar space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className={`flex flex-col items-center justify-center border-b-2 py-3 whitespace-nowrap ${
-                  link.active
-                    ? "border-primary text-primary"
-                    : "border-transparent text-slate-500 dark:text-slate-400 hover:text-primary"
-                } transition-colors`}
-              >
-                <span className={`text-sm ${link.active ? "font-bold" : "font-semibold"}`}>
-                  {link.label}
-                </span>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`flex flex-col items-center justify-center border-b-2 py-3 whitespace-nowrap transition-all duration-200 ${
+                    isActive
+                      ? "border-primary text-primary"
+                      : "border-transparent text-slate-500 dark:text-slate-400 hover:text-primary hover:border-primary/30"
+                  }`}
+                >
+                  <span className={`text-sm ${isActive ? "font-bold" : "font-semibold"}`}>
+                    {link.label}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

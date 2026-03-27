@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from "@/components/Header";
 import { HeroBanner } from "@/components/HeroBanner";
 import { LeadershipMessages } from "@/components/LeadershipMessages";
@@ -7,11 +9,40 @@ import { UsefulShortcuts } from "@/components/UsefulShortcuts";
 import { EventsCalendar } from "@/components/EventsCalendar";
 import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { Notification } from "@/components/Notification";
+import { Modal } from "@/components/Modal";
+import { useState } from "react";
 
 export default function Home() {
+  const [showNotification, setShowNotification] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-      <Header />
+      <Header onNotificationClick={() => setShowNotification(true)} />
+
+      <Notification
+        show={showNotification}
+        onClose={() => setShowNotification(false)}
+        title="Thông báo mới"
+        message="Bạn có 3 thông báo mới chưa đọc trong hệ thống VB Portal."
+        type="info"
+      />
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Thông báo quan trọng"
+      >
+        <p className="text-slate-600 dark:text-slate-300">
+          Chào mừng bạn đến với hệ thống cổng thông tin nội bộ của Vietbank. Đây là ví dụ về một popup Modal dùng để hiển thị các thông báo quan trọng hoặc yêu cầu xác nhận từ người dùng.
+        </p>
+        <ul className="mt-4 list-disc pl-5 space-y-2 text-sm text-slate-500">
+          <li>Thiết kế hiện đại, tinh tế.</li>
+          <li>Tự động thích ứng giao diện tối (Dark Mode).</li>
+          <li>Hỗ trợ các hành động xác nhận.</li>
+        </ul>
+      </Modal>
 
       {/* Main Content Container */}
       <main className="max-w-[1200px] mx-auto w-full px-4 py-8">
