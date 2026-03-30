@@ -304,7 +304,7 @@ export default function ProfilePage() {
                           </Link>
                         </div>
                         <p className="text-sm text-slate-700 dark:text-slate-300 mb-3">
-                          "{comment.content}"
+                          {comment.content}
                         </p>
                         <div className="flex items-center gap-4 text-xs text-slate-500">
                           <span>{comment.date}</span>
