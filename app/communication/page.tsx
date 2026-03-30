@@ -101,9 +101,9 @@ export default function CommunicationPage() {
                 {featuredNews.summary}
               </p>
               <div className="flex items-center gap-6">
-                <button className="rounded-xl bg-white px-8 py-3.5 font-bold text-slate-900 shadow-xl transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                <Link href="/communication/bai-viet" className="rounded-xl bg-white px-8 py-3.5 font-bold text-slate-900 shadow-xl transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
                   Đọc toàn văn bài viết <ArrowRight className="w-5 h-5" />
-                </button>
+                </Link>
                 <div className="flex items-center gap-4 text-white/80 text-sm font-bold">
                   <span className="flex items-center gap-1.5"><Eye className="w-4 h-4" /> 1.5k lượt xem</span>
                   <span className="flex items-center gap-1.5"><MessageCircle className="w-4 h-4" /> 52 bình luận</span>
@@ -211,9 +211,9 @@ export default function CommunicationPage() {
                       &quot;{msg.quote}&quot;
                     </p>
                     <div className="pt-4">
-                      <button className="flex items-center gap-3 text-primary font-black group-hover:gap-5 transition-all">
+                      <Link href="/communication/bai-viet" className="flex items-center gap-3 text-primary font-black group-hover:gap-5 transition-all">
                         Đọc toàn bộ thông điệp <ArrowRight className="w-5 h-5" />
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

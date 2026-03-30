@@ -21,13 +21,13 @@ export default function Home() {
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
       <Header onNotificationClick={() => setShowNotification(true)} />
 
-      <Notification
+      {/* <Notification
         show={showNotification}
         onClose={() => setShowNotification(false)}
         title="Thông báo mới"
         message="Bạn có 3 thông báo mới chưa đọc trong hệ thống VB Portal."
         type="info"
-      />
+      /> */}
 
       <Modal
         isOpen={isModalOpen}

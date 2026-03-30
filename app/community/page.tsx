@@ -5,8 +5,9 @@ import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Notification } from "@/components/Notification";
 import { useState } from "react";
-import { Heart, Users, Calendar, ArrowRight, Share2 } from "lucide-react";
+import { Heart, Users, Calendar, ArrowRight, Share2, MessageCircle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const upcomingCampaigns = [
   {
@@ -156,7 +157,11 @@ export default function CommunityPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {pastActivities.map((activity) => (
-                <div key={activity.id} className="flex flex-col rounded-2xl bg-white dark:bg-slate-900 shadow-md border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <Link 
+                  key={activity.id} 
+                  href="/community/bai-viet"
+                  className="flex flex-col rounded-2xl bg-white dark:bg-slate-900 shadow-md border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-300"
+                >
                   <div className="relative h-48 w-full overflow-hidden">
                     <Image
                       src={activity.image}
@@ -175,18 +180,21 @@ export default function CommunityPage() {
                   </div>
                   <div className="px-6 py-4 border-t border-slate-50 dark:border-slate-800 flex items-center justify-between text-slate-400 text-sm">
                     <div className="flex items-center gap-4">
-                      <button className="flex items-center gap-1 hover:text-red-500 transition-colors">
-                        ❤️ {activity.likes}
-                      </button>
-                      <button className="flex items-center gap-1 hover:text-primary transition-colors">
-                        💬 {activity.comments}
-                      </button>
+                      <span className="flex items-center gap-1">
+                        <Heart className="w-4 h-4" /> {activity.likes}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <MessageCircle className="w-4 h-4" /> {activity.comments}
+                      </span>
                     </div>
-                    <button className="hover:text-primary">
+                    <button className="hover:text-primary" onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}>
                       <Share2 className="w-4 h-4" />
                     </button>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </section>
