@@ -1,29 +1,27 @@
 "use client";
 
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
-import { useState } from "react";
-import { 
-  User, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Calendar, 
-  Briefcase, 
-  Award,
-  Edit,
-  Camera,
-  Settings,
-  LogOut,
-  Heart,
+import {
   Bookmark,
-  MessageCircle,
+  Briefcase,
+  Calendar,
+  Camera,
+  ChevronRight,
+  Edit,
   FileText,
-  ChevronRight
+  Heart,
+  LogOut,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Settings,
+  User
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const userData = {
   name: "Nguyễn Văn A",
