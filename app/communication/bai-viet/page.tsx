@@ -21,7 +21,7 @@ import Link from "next/link";
 
 const articleData = {
   id: 1,
-  title: "Vietbank vươn tầm cao mới: Kỷ niệm 15 năm thành lập và phát triển rực rỡ",
+  title: "Vietbank vươn tầm khát vọng: Kỷ niệm 19 năm thành lập và phát triển rực rỡ",
   category: "Sự kiện tiêu điểm",
   date: "27/03/2026",
   author: "Ban Truyền thông",
@@ -31,10 +31,10 @@ const articleData = {
   image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBtgF_STXYl4S9nBxM2yaT91lES9dw_gqQO3SbFb6ny_3uGKNfhfSualjcsETr80yNqtxwl_yzXWQ556qyjbiPcJ65WktlOV6MGCu6OJy7iB7fzaghc8nO38GqwS_oSurvrpPGOZ7FIjMcYcOR-lnkNuKd4KitXP3qsStN86Q1ZwOdBIX61Xnl_oBPUqjXPlVZ7WrbUzbNzQ2s8Ip5OhhO2Yelnk4BikbHZGRXpwb63aIZjbalo3qiNHTMV4fMYo7TK2OCHQLwPet90",
   content: `
     <p class="mb-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-      Hành trình 15 năm kiến tạo những giá trị bền vững và không ngừng đổi mới để phục vụ khách hàng tốt hơn mỗi ngày. Vietbank tự hào là người đồng hành tin cậy của hàng triệu khách hàng trên khắp cả nước.
+      Hành trình 19 năm kiến tạo những giá trị bền vững và không ngừng đổi mới để phục vụ khách hàng tốt hơn mỗi ngày. Vietbank tự hào là người đồng hành tin cậy của hàng triệu khách hàng trên khắp cả nước.
     </p>
     <p class="mb-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-      Trong suốt 15 năm qua, Vietbank đã không ngừng phát triển và hoàn thiện, từ một ngân hàng nhỏ với tầm nhìn lớn đã trở thành một trong những ngân hàng thương mại cổ phần hàng đầu Việt Nam. Chúng tôi luôn đặt khách hàng làm trung tâm của mọi quyết định và hoạt động kinh doanh.
+      Trong suốt 19 năm qua, Vietbank đã không ngừng phát triển và hoàn thiện, từ một ngân hàng nhỏ với tầm nhìn lớn đã trở thành một trong những ngân hàng thương mại cổ phần hàng đầu Việt Nam. Chúng tôi luôn đặt khách hàng làm trung tâm của mọi quyết định và hoạt động kinh doanh.
     </p>
     <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 mt-8">Những dấu mốc quan trọng</h2>
     <p class="mb-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
@@ -69,7 +69,7 @@ const comments = [
     author: "Trần Văn Minh",
     avatar: "",
     date: "5 giờ trước",
-    content: "15 năm là một hành trình dài với nhiều thử thách. Chúc Vietbank tiếp tục thành công!",
+    content: "19 năm là một hành trình dài với nhiều thử thách. Chúc Vietbank tiếp tục thành công!",
     likes: 8,
     replies: []
   },
@@ -78,7 +78,7 @@ const comments = [
     author: "Lê Thị Hương",
     avatar: "",
     date: "1 ngày trước",
-    content: "Nhân dịp kỷ niệm 15 năm, mong ngân hàng có thêm nhiều chương trình ưu đãi cho khách hàng.",
+    content: "Nhân dịp kỷ niệm 19 năm, mong ngân hàng có thêm nhiều chương trình ưu đãi cho khách hàng.",
     likes: 15,
     replies: []
   }

@@ -29,7 +29,7 @@ const notifications = [
     id: 1,
     category: "Lãnh đạo",
     categoryColor: "bg-blue-100 text-blue-700",
-    title: "Thông điệp Tổng Giám đốc nhân dịp kỷ niệm 20 năm thành lập",
+    title: "Thông điệp Tổng Giám đốc nhân dịp kỷ niệm 19 năm thành lập",
     time: "5 phút trước",
     liked: false,
   },

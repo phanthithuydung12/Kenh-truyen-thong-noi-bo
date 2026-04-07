@@ -16,10 +16,10 @@ export function HeroBanner() {
             Tiêu điểm
           </span>
           <h2 className="font-bold text-white leading-tight max-w-2xl text-3xl lg:text-4xl font-extrabold">
-            Vietbank vươn tầm cao mới: Kỷ niệm 15 năm thành lập và phát triển rực rỡ
+            Vietbank vươn tầm khát vọng: Kỷ niệm 19 năm thành lập và phát triển rực rỡ
           </h2>
           <p className="mt-2 text-slate-200 hidden lg:block line-clamp-2 max-w-xl">
-            Hành trình 15 năm kiến tạo những giá trị bền vững và không ngừng đổi mới để phục vụ khách hàng tốt hơn mỗi ngày.
+            Hành trình 19 năm kiến tạo những giá trị bền vững và không ngừng đổi mới để phục vụ khách hàng tốt hơn mỗi ngày.
           </p>
         </div>
         <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">

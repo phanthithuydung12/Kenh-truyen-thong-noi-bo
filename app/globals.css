@@ -22,4 +22,12 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .no-password-reveal::-ms-reveal,
+  .no-password-reveal::-ms-clear {
+    display: none;
+  }
+  .no-password-reveal::-webkit-textfield-decoration-container {
+    display: none !important;
+  }
 }

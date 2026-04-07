@@ -3,6 +3,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { useRouter } from "next/navigation";
 import {
   Bookmark,
   Briefcase,
@@ -87,7 +88,12 @@ const myComments = [
 ];
 
 export default function ProfilePage() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("activity");
+
+  const handleLogout = () => {
+    router.push("/login");
+  };
 
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
@@ -215,19 +221,15 @@ export default function ProfilePage() {
                     <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Bài viết đã thích</span>
                     <ChevronRight className="w-4 h-4 text-slate-400" />
                   </Link>
-                  <Link href="#" className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Tài liệu đã tải</span>
-                    <ChevronRight className="w-4 h-4 text-slate-400" />
-                  </Link>
-                  <Link href="#" className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Cài đặt thông báo</span>
-                    <ChevronRight className="w-4 h-4 text-slate-400" />
-                  </Link>
+                 
                 </div>
               </div>
 
               {/* Logout */}
-              <button className="w-full flex items-center justify-center gap-2 p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-xl hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors">
+              <button 
+                onClick={handleLogout}
+                className="w-full flex items-center justify-center gap-2 p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-xl hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors"
+              >
                 <LogOut className="w-5 h-5" />
                 <span className="font-medium">Đăng xuất</span>
               </button>
