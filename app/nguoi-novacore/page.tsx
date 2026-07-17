@@ -1,0 +1,30 @@
+"use client";
+
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { NguoiNovaCoreContent } from "@/components/NguoiNovaCoreContent";
+import { Notification } from "@/components/Notification";
+import { useState } from "react";
+
+export default function NguoiNovaCorePage() {
+  const [showNotification, setShowNotification] = useState(false);
+
+  return (
+    <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <Header onNotificationClick={() => setShowNotification(true)} />
+      
+      <Notification
+        show={showNotification}
+        onClose={() => setShowNotification(false)}
+        title="Thông báo"
+        message="Chào mừng bạn đến với chuyên mục Người NovaCore!"
+        type="info"
+      />
+
+      <NguoiNovaCoreContent />
+      <Footer />
+      <MobileBottomNav />
+    </div>
+  );
+}
